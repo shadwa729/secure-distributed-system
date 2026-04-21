@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS audit_logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    service_name VARCHAR(100) NOT NULL,
+    request_id VARCHAR(100) NOT NULL,
+    action_performed VARCHAR(255) NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    source VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS request_states (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    request_id VARCHAR(100) NOT NULL,
+    state VARCHAR(50) NOT NULL,
+    service_name VARCHAR(100) NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);

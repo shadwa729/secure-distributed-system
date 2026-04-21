@@ -1,0 +1,4 @@
+flask
+pika
+PyJWT
+mysql-connector-python
